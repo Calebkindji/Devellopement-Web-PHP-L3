@@ -4,20 +4,37 @@
 ?>
 
 <!-- Section Hero avec design immersif -->
-<section class="relative bg-gradient-to-r from-purple-00 via-pink-700 to-yellow-00 text-white py-10 shadow-2xl">
+<section id="hero" class="relative bg-gradient-to-r from-purple-00 via-pink-700 to-yellow-00 text-white py-10 shadow-2xl">
     <div class="container mx-auto text-center">
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-xl animate-fade-in">
+        <!-- Titre avec effet zoom -->
+        <h1 data-aos="zoom-in" class="text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-xl">
             Profitez des <span class="text-yellow-300">meilleures offres</span>
         </h1>
-        <p class="mt-6 text-lg md:text-xl text-gray-200 max-w-3xl mx-auto animate-slide-in">
+
+        <!-- Paragraphe avec effet slide -->
+        <p data-aos="slide-up" data-aos-delay="300" class="mt-6 text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
             Découvrez des promotions exclusives et faites des économies intelligentes chaque jour.
         </p>
+
+        <!-- Bouton -->
         <a href="#promotions" 
            class="mt-10 inline-block px-10 py-5 bg-yellow-400 text-black font-bold rounded-full shadow-lg hover:bg-yellow-300 transition duration-300 animate-bounce">
            Voir les Offres
         </a>
     </div>
 </section>
+
+<!-- Scripts AOS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // durée de l’animation
+    once: false,    // rejoue l’effet à chaque scroll
+    mirror: true    // rejoue aussi quand on sort et re-rentre
+  });
+</script>
+
 
 <?php require 'models/promotionData.php'; ?>
 

@@ -40,6 +40,9 @@
                                 <a href="magasins.php"
                                     class="<?php echo $_SERVER['REQUEST_URI'] === '/lshipromo/magasins.php'? "bg-gray-950/50 text-white" : "text-gray-300 hover:bg-white/5 hover:text-white"; ?> rounded-md px-3 py-2 text-sm font-medium">Magasins</a>
                                     
+                                <a href="publier.php"
+                                    class="<?php echo $_SERVER['REQUEST_URI'] === '/lshipromo/publier.php'? "bg-gray-950/50 text-white" : "text-gray-300 hover:bg-white/5 hover:text-white"; ?> rounded-md px-3 py-2 text-sm font-medium">Publier</a>
+                                    
                                 <a href="contacts.php"
                                     class="<?php echo $_SERVER['REQUEST_URI'] === '/lshipromo/contacts.php'? "bg-gray-950/50 text-white" : "text-gray-300 hover:bg-white/5 hover:text-white"; ?> rounded-md px-3 py-2 text-sm font-medium">Contact</a>
                             
