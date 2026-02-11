@@ -28,11 +28,11 @@
   </div>
   <div class="mb-5">
     <label for="magasin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Magasin</label>
-    <select id="magasin" name="magasin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        <option selected>Top-Market</option>
-        <option value="magasin2">Kin-Marche</option>
-        <option value="magasin3">Jambo</option>
-        <option value="magasin4">Rocheio</option>
+    <select id="magasin" name="magasin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+        <option value="Top-Market" selected>Top-Market</option>
+        <option value="Kin-Marche">Kin-Marche</option>
+        <option value="Jambo">Jambo</option>
+        <option value="Rocheio">Rocheio</option>
     </select>
   </div>
   
