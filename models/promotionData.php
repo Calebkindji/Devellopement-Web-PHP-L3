@@ -1,30 +1,34 @@
 <?php 
-$promotions=[
-    'Top-Market' =>[
-        'iphone 16' =>[
-            'prix-Initial' =>350,
-            'prix-promo' =>280,
-            'devise' => '$',
-            'image' => 'image_iphone_16.webp',
+$dossier_database= __DIR__.'/../database/';
 
-        ],
-        'Farine-Twiga' =>[
-            'prix-Initial' =>53000,
-            'prix-promo' =>42000,
-            'devise' => 'FC',
-            'image' => 'image_farine_twiga.webp',
+if(!is_dir($dossier_database)){
+    mkdir($dossier_database, 0755, true);
+}
 
-        ],
-    ],
-    'Kin-Marche' =>[
-        'Lait NIDO' =>[
-            'prix-Initial' =>37500,
-            'prix-promo' =>22000,
-            'devise' => 'FC',
-            'image' => 'image_lait_nido.webp',
+$pdo = new PDO('sqlite:'.$dossier_database.'lshipromo.sqlite');
 
-        ]
-    ],
+$pdo->exec("CREATE TABLE IF NOT EXISTS promotions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom_produit TEXT NOT NULL,
+    prix_initial INTEGER NOT NULL,
+    prix_promo INTEGER NOT NULL,
+    devise TEXT NOT NULL,
+    magasin TEXT NOT NULL,
+    chemin_image TEXT NOT NULL
+)");
+$stmt = $pdo->query("SELECT * FROM promotions ORDER BY id DESC");
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$promotions = [];
+foreach($results as $promo){
+    $magasin = $promo['magasin'];
+    $nom_produit = $promo['nom_produit'];
+    $promotions[$magasin][$nom_produit] = [
+        'prix-Initial' => $promo['prix_initial'],
+        'prix-promo' => $promo['prix_promo'],
+        'devise' => $promo['devise'],
+        'image' => $promo['chemin_image']
+    ];
+}
 
-];
+
 ?>
